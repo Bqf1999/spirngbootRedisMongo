@@ -48,6 +48,20 @@ public class RedisCongfig {
 
          return template;
      }
+    /**
+     * @Bean
+     *     public RedisTemplate<Object, User> redisTemplate(RedisConnectionFactory redisConnectionFactory) {
+     *         RedisTemplate<Object, User> template = new RedisTemplate<>();
+     *         template.setConnectionFactory(redisConnectionFactory);
+     *
+     *         Jackson2JsonRedisSerializer<User> ser = new Jackson2JsonRedisSerializer<>(User.class);
+     *         template.setDefaultSerializer(ser);
+     *         return template;
+     *     }
+     */
+
+
+
 
     /**
      * 对hash类型数据操作

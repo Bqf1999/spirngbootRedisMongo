@@ -1,0 +1,27 @@
+version: '3.7'
+services:
+  dockerweb:
+    build: .
+    depends_on:
+      - redis
+      - mongo
+    ports:
+      - 8080:8080
+  redis:
+    image: 'redis'
+    container_name: "redis"
+    restart: always
+    volumes:
+      - /Users/topjoy/baoqifan/dockerTest/redis/data:/data
+      - /Users/topjoy/baoqifan/dockerTest/redis/redis.conf:/etc/redis/redis.conf
+    ports:
+      - 6379:6379
+  mongo:
+    image: 'mongo'
+    container_name: "mongo"
+    restart: always
+    volumes:
+      - /Users/topjoy/baoqifan/dockerTest/mongo/db:/data/db
+      - /Users/topjoy/baoqifan/dockerTestmongo/log:/data/logs
+    ports:
+      - 27017:27017

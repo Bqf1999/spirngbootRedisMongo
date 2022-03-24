@@ -29,7 +29,7 @@ public class Controller {
         User user=new User();
         user.setUserId(id);
         user.setName(name);
-        boolean RedisRes=redisUtil.set(String.valueOf(id),name,ExpireTime);
+        boolean RedisRes=redisUtil.set(String.valueOf(id),user,ExpireTime);
         mongoDao.saveMongo(user);
         Response response=new Response(RedisRes,user);
         return response;
